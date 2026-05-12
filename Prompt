@@ -1,49 +1,489 @@
 App + Dashboard:
 
-1. PERFIL Y ARQUITECTURA RESPONSIVA Actúa como Desarrollador Senior Full-Stack experto en Expo (React Native) y Supabase. Crea una solución universal (iOS, Android, Web) llamada Vackly usando TypeScript estricto y NativeWind.
-Breakpoint (768px): * MÓVIL: Navigation Bar inferior (Tabs) + Stack Navigation para pantallas de detalle.
-WEB/TABLET: Sidebar lateral fijo (izquierdo) con logo de Vackly. Contenido principal en Grid de 3 columnas (Estilo Dashboard Pro).
-Estructura Modular: Organiza el código en /app, /components, /hooks, /lib y /constants.
+Actúa como un Desarrollador Senior Full-Stack experto en:
 
-2. GESTIÓN INTELIGENTE DE ASSETS (INTUICIÓN DE IMÁGENES)Instrucción de Autonomía: No preguntes por las rutas de las imágenes. Intuye y crea un archivo independiente (ej: constants/assets.ts) que centralice todas las referencias visuales.
-Mapeo Automático: Asume una estructura en assets/images/. Crea objetos de referencia para:
-Mascota Slime: Poses idle, working, break, sad, happy.
-Branding: Logos de Vackly (versiones light/dark) y fondos Glassmorphism.
-Placeholders: Avatares para cuidadores y familias.
-El componente SlimeMascot debe consumir este archivo para cambiar de pose dinámicamente según el estado.
+Expo
+React Native
+TypeScript estricto
+NativeWind
+Supabase
+Arquitectura SaaS moderna
+UX/UI premium multiplataforma
 
-3. INTEGRACIÓN REAL CON SUPABASE (BACKEND & REALTIME)Instrucción Crítica: Implementa funcionalidad real utilizando @supabase/supabase-js.
-Autenticación: Flujo real con supabase.auth (Login, Registro con selección de rol).
-Base de Datos: Persistencia de jornadas (timestamps), vacaciones, historial, fichas de pacientes y perfil.
-Realtime: Sincronización mediante supabase.channel para el Panel de Admin (actualización instantánea de estados).
-Seguridad: Genera las políticas RLS (Row Level Security) en el SQL para que los datos sean privados por usuario.
-Storage: Lógica para subir/descargar fotos y justificantes desde buckets de Supabase.
+Construye una solución universal llamada “Vackly” compatible con:
 
-4. ESTÉTICA "SLIME GLASSMORPHISM"
-Branding: El nombre es Vackly. Tipografía sans-serif moderna.
-Paleta: PROHIBIDO EL COLOR VERDE. Gradientes Azul Eléctrico (#3B82F6) a Púrpura (#8B5CF6). Fondo Lavanda pálido (#F5F3FF).
-UI: Efecto Glassmorphism (60% transparencia, Expo-Blur, bordes blancos sutiles).
-Mascota: Únicamente el Slime azul-púrpura. Sin perezosos ni emojis.
+iOS
+Android
+Web
 
-5. MÓDULOS Y PANTALLAS (SISTEMA INTEGRAL)
-Inicio & Multi-idioma: Pantalla de bienvenida con selector de idioma (i18next) para Español, Inglés, Catalán, Euskera y Gallego. Selección de cuenta Cuidador/Familia.
-Dashboard Cuidador: Timer funcional vinculado a Supabase y botón contextual dinámico.
-Fichaje Pro: Confirmación "Desliza para iniciar", simulación de NFC y Geofencing con expo-location.
-Gestión de Tiempos: Historial real, Alteraciones de horario, Vacaciones (Calendario de rangos funcional) y Bajas Médicas.
-Ficha de Cuidados (Paciente): Información crítica editable (Medicación, Rutinas, Alérgenos, Trastornos).
-Perfil & Bienestar: Perfil profesional (CV, Contrato, Reseñas) y Mood Tracker post-jornada.
-Panel Admin (Vista Web): Monitor en vivo, Planificador Drag & Drop y aprobador de solicitudes RRHH.
+El resultado debe sentirse como un producto SaaS premium moderno financiado por startup tecnológica.
 
-6. ESPECIFICACIONES TÉCNICAS Y SALIDA
-Navegación: expo-router.
-Iconos: lucide-react-native (azul/púrpura).
-Interactividad: Cada botón debe ejecutar una acción real (Update en BD, navegación o cambio de estado).
-Entrega: Código funcional, limpio y modular. Incluye la lógica responsiva (md:) en cada componente.
+1. STACK Y ARQUITECTURA
 
+Tecnologías obligatorias:
 
+Expo
+React Native
+TypeScript strict mode
+NativeWind
+expo-router
+Supabase
+i18next
+lucide-react-native
+expo-blur
+expo-location
+react-native-reanimated
+react-native-gesture-handler
 
+Estructura modular obligatoria:
 
+/app
+/components
+/hooks
+/lib
+/constants
+/services
+/store
+/types
+/assets
 
+Separar:
 
+lógica
+UI
+hooks
+servicios
+estados globales
+assets
+design tokens
+
+Mantener código:
+
+limpio
+reutilizable
+escalable
+production-ready
+2. RESPONSIVE DESIGN SYSTEM
+
+Breakpoint principal:
+
+md = 768px
+MOBILE
+
+Usar:
+
+Bottom Tabs Navigation
+Stack Navigation para detalles
+UX compacta y eficiente
+Navegación rápida con una mano
+TABLET / WEB
+
+Usar:
+
+Sidebar izquierda fija
+Dashboard estilo SaaS premium
+Layout responsive de 3 columnas
+Widgets desacoplados
+Topbar sticky translúcida
+3. RESPONSIVE DENSITY SYSTEM
+
+IMPORTANTE:
+
+NO usar exceso de espacio en móvil.
+
+La app debe sentirse:
+
+rápida
+operativa
+táctil
+eficiente
+Mobile
+spacing compacto y elegante
+minimizar scroll vertical
+acciones rápidas
+padding reducido
+densidad eficiente
+priorizar productividad
+Web/Desktop
+experiencia más aireada
+dashboard premium visual
+mayor separación entre widgets
+layouts más amplios
+
+Mantener consistencia visual entre plataformas sin desperdiciar espacio en móvil.
+
+4. DESIGN SYSTEM PREMIUM
+
+Crear sistema completo de design tokens:
+
+colors.ts
+spacing.ts
+typography.ts
+radius.ts
+shadows.ts
+animations.ts
+Branding
+
+Nombre:
+Vackly
+
+Tipografía
+Inter para UI
+Space Grotesk para títulos
+Sans-serif moderna
+Jerarquía tipográfica consistente
+Paleta (PROHIBIDO VERDE)
+
+Primary Gradient:
+
+Azul Eléctrico #3B82F6
+Púrpura #8B5CF6
+
+Background:
+
+Lavanda pálido #F5F3FF
+UI Style
+Glassmorphism premium
+Transparencia 60%
+Blur suave
+Bordes blancos sutiles
+Sombras suaves estilo Apple/visionOS
+Border Radius
+Cards: 24px
+Inputs: 16px
+Pills: 999px
+5. MOTION DESIGN SYSTEM
+
+La aplicación debe sentirse viva y moderna.
+
+Implementar:
+
+Transiciones fluidas
+Shared element transitions
+Microinteracciones
+Hover animations en web
+Skeleton loaders shimmer
+Animaciones spring suaves
+Feedback visual instantáneo
+Reanimated transitions
+Animaciones de entrada staggered
+Haptic feedback en móvil
+
+Duraciones:
+
+200ms a 300ms
+6. REFERENCIAS VISUALES
+
+Inspiración visual:
+
+Stripe Dashboard
+Linear
+Raycast
+Vercel
+Notion
+Arc Browser
+Apple Health
+visionOS
+iOS 18
+
+Objetivo visual:
+
+minimalismo premium
+interfaces limpias
+profundidad elegante
+aspecto moderno startup SaaS
+
+PROHIBIDO:
+
+UI genérica tipo admin template
+tablas aburridas
+botones default
+cards planas
+interfaces saturadas
+colores chillones
+7. GESTIÓN INTELIGENTE DE ASSETS
+
+NO preguntar por rutas de imágenes.
+
+Crear automáticamente:
+constants/assets.ts
+
+Asumir estructura:
+assets/images/
+
+Mascota Slime
+
+Crear referencias para:
+
+idle
+working
+break
+sad
+happy
+Branding
+logo light
+logo dark
+fondos glassmorphism
+gradients
+patterns
+Placeholders
+cuidadores
+familias
+pacientes
+
+El componente SlimeMascot debe:
+
+consumir assets.ts
+cambiar dinámicamente según estado
+incluir animación idle breathing
+8. COMPONENT LIBRARY
+
+Crear componentes reutilizables premium:
+
+GlassCard
+GradientButton
+BlurModal
+SmartInput
+FloatingActionButton
+AnimatedMetricCard
+SlimeMascot
+ShiftCard
+Timeline
+LiveStatusBadge
+FloatingSidebar
+GlassHeader
+AnimatedTabs
+RealtimeIndicator
+MoodSelector
+CalendarRangePicker
+
+Todos deben:
+
+soportar responsive
+soportar dark/light
+usar design tokens
+tener animaciones suaves
+9. AUTENTICACIÓN REAL CON SUPABASE
+
+Implementar autenticación REAL usando Supabase.
+
+Funciones
+Login
+Registro
+Recuperación contraseña
+Persistencia sesión
+Logout
+Registro
+
+Permitir selección de rol:
+
+Cuidador
+Familia
+Admin
+
+Guardar metadata de usuario.
+
+10. BASE DE DATOS REAL
+
+Usar Supabase PostgreSQL.
+
+Crear SQL completo:
+
+tablas
+relaciones
+índices
+constraints
+Persistencia REAL
+
+Guardar:
+
+jornadas
+fichajes
+vacaciones
+bajas médicas
+alteraciones horarias
+mood tracker
+pacientes
+historial
+perfiles
+reviews
+documentos
+11. SEGURIDAD RLS
+
+Generar políticas completas Row Level Security.
+
+Objetivo:
+
+datos privados por usuario
+acceso por roles
+protección completa
+
+Incluir:
+
+policies SQL
+permisos por rol
+seguridad production-ready
+12. STORAGE
+
+Implementar buckets Supabase para:
+
+fotos
+CV
+contratos
+justificantes
+documentos médicos
+
+Funciones:
+
+upload
+preview
+delete
+download
+13. REALTIME
+
+Implementar realtime REAL usando:
+supabase.channel
+
+Actualizaciones en vivo
+estados trabajadores
+fichajes
+solicitudes
+panel admin
+monitor operativo
+
+Todo sincronizado instantáneamente.
+
+14. GEOLOCALIZACIÓN Y FICHAJE
+
+Usar:
+expo-location
+
+Implementar:
+
+geofencing
+permisos
+validación ubicación
+simulación NFC
+fichaje inteligente
+UX fichaje
+“Desliza para iniciar jornada”
+feedback visual inmediato
+animaciones premium
+15. INTERNACIONALIZACIÓN
+
+Usar:
+i18next
+
+Idiomas:
+
+Español
+Inglés
+Catalán
+Euskera
+Gallego
+
+Persistir idioma seleccionado.
+
+16. PANTALLAS Y MÓDULOS
+Welcome
+onboarding premium
+selector idioma
+selector rol
+branding animado
+Dashboard Cuidador
+timer funcional
+estado en vivo
+resumen jornada
+acciones rápidas
+Gestión de Tiempos
+historial real
+vacaciones
+bajas médicas
+alteraciones
+calendario funcional
+Pacientes
+medicación
+rutinas
+alergias
+trastornos
+información crítica editable
+Perfil Profesional
+CV
+contrato
+reseñas
+estadísticas
+documentos
+Mood Tracker
+estado post-jornada
+slime reactivo
+analytics emocionales
+Admin Dashboard (WEB)
+monitor en vivo
+métricas realtime
+planner drag & drop
+aprobador RRHH
+analytics
+heatmaps
+actividad instantánea
+17. EMPTY STATES
+
+Cada módulo debe tener:
+
+estados vacíos ilustrados
+mensajes humanos
+feedback visual premium
+
+La mascota Slime debe reaccionar:
+
+happy → tareas completadas
+sad → sin actividad
+working → jornada activa
+break → descanso
+18. UX PREMIUM
+
+Prioridades:
+
+velocidad percibida
+claridad
+accesibilidad
+ergonomía móvil
+sensación premium
+
+Cada botón debe ejecutar:
+
+navegación real
+update real
+acción real
+realtime update
+
+NO usar:
+
+placeholders falsos
+botones muertos
+mocks estáticos
+19. OUTPUT ESPERADO
+
+Generar:
+
+código funcional
+modular
+limpio
+responsive
+production-ready
+
+Incluir:
+
+estructura completa
+navegación
+SQL
+hooks
+servicios
+providers
+realtime
+auth
+storage
+UI premium
+
+El resultado debe parecer una aplicación SaaS real lista para escalar.
 
 
