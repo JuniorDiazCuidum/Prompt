@@ -1,0 +1,39 @@
+App + Dashboard:
+
+1. PERFIL Y ARQUITECTURA RESPONSIVA Actúa como Desarrollador Senior Full-Stack experto en Expo (React Native) y Supabase. Crea una solución universal (iOS, Android, Web) llamada Vackly usando TypeScript estricto y NativeWind.
+Breakpoint (768px): * MÓVIL: Navigation Bar inferior (Tabs) + Stack Navigation para pantallas de detalle.
+WEB/TABLET: Sidebar lateral fijo (izquierdo) con logo de Vackly. Contenido principal en Grid de 3 columnas (Estilo Dashboard Pro).
+Estructura Modular: Organiza el código en /app, /components, /hooks, /lib y /constants.
+2. GESTIÓN INTELIGENTE DE ASSETS (INTUICIÓN DE IMÁGENES)Instrucción de Autonomía: No preguntes por las rutas de las imágenes. Intuye y crea un archivo independiente (ej: constants/assets.ts) que centralice todas las referencias visuales.
+Mapeo Automático: Asume una estructura en assets/images/. Crea objetos de referencia para:
+Mascota Slime: Poses idle, working, break, sad, happy.
+Branding: Logos de Vackly (versiones light/dark) y fondos Glassmorphism.
+Placeholders: Avatares para cuidadores y familias.
+El componente SlimeMascot debe consumir este archivo para cambiar de pose dinámicamente según el estado.
+3. INTEGRACIÓN REAL CON SUPABASE (BACKEND & REALTIME)Instrucción Crítica: Implementa funcionalidad real utilizando @supabase/supabase-js.
+Autenticación: Flujo real con supabase.auth (Login, Registro con selección de rol).
+Base de Datos: Persistencia de jornadas (timestamps), vacaciones, historial, fichas de pacientes y perfil.
+Realtime: Sincronización mediante supabase.channel para el Panel de Admin (actualización instantánea de estados).
+Seguridad: Genera las políticas RLS (Row Level Security) en el SQL para que los datos sean privados por usuario.
+Storage: Lógica para subir/descargar fotos y justificantes desde buckets de Supabase.
+4. ESTÉTICA "SLIME GLASSMORPHISM"
+Branding: El nombre es Vackly. Tipografía sans-serif moderna.
+Paleta: PROHIBIDO EL COLOR VERDE. Gradientes Azul Eléctrico (#3B82F6) a Púrpura (#8B5CF6). Fondo Lavanda pálido (#F5F3FF).
+UI: Efecto Glassmorphism (60% transparencia, Expo-Blur, bordes blancos sutiles).
+Mascota: Únicamente el Slime azul-púrpura. Sin perezosos ni emojis.
+5. MÓDULOS Y PANTALLAS (SISTEMA INTEGRAL)
+Inicio & Multi-idioma: Pantalla de bienvenida con selector de idioma (i18next) para Español, Inglés, Catalán, Euskera y Gallego. Selección de cuenta Cuidador/Familia.
+Dashboard Cuidador: Timer funcional vinculado a Supabase y botón contextual dinámico.
+Fichaje Pro: Confirmación "Desliza para iniciar", simulación de NFC y Geofencing con expo-location.
+Gestión de Tiempos: Historial real, Alteraciones de horario, Vacaciones (Calendario de rangos funcional) y Bajas Médicas.
+Ficha de Cuidados (Paciente): Información crítica editable (Medicación, Rutinas, Alérgenos, Trastornos).
+Perfil & Bienestar: Perfil profesional (CV, Contrato, Reseñas) y Mood Tracker post-jornada.
+Panel Admin (Vista Web): Monitor en vivo, Planificador Drag & Drop y aprobador de solicitudes RRHH.
+6. ESPECIFICACIONES TÉCNICAS Y SALIDA
+Navegación: expo-router.
+Iconos: lucide-react-native (azul/púrpura).
+Interactividad: Cada botón debe ejecutar una acción real (Update en BD, navegación o cambio de estado).
+Entrega: Código funcional, limpio y modular. Incluye la lógica responsiva (md:) en cada componente.
+
+
+
