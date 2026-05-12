@@ -1,0 +1,2112 @@
+PROMPT ÚNICO DEFINITIVO PARA GENERAR LA APP VACKLY
+
+Actúa como Desarrollador Senior Full-Stack experto en Expo, React Native, TypeScript strict, NativeWind, Supabase, expo-router, i18next, UX/UI premium multiplataforma, arquitectura SaaS moderna, dashboards responsive y productos mobile/web production-ready.
+
+Construye una app universal llamada Vackly, compatible con iOS, Android, Web y Tablet, orientada al control de presencia laboral de cuidadores profesionales y a la gestión de cuidados por parte de familias.
+
+La app debe ser funcional, escalable, segura, responsive, modular y visualmente fiel a las imágenes de referencia proporcionadas.
+
+IMPORTANTE:
+- Respetar estrictamente la estética de las imágenes de referencia.
+- No modificar el estilo visual.
+- No rediseñar la mascota.
+- No generar una UI genérica.
+- No incluir módulo de reseñas ni valoraciones.
+- No incluir CV/currículum del cuidador.
+- No permitir contratación de cuidadores desde la app.
+- Las familias no pueden contratar cuidadores desde la aplicación.
+- La interfaz debe usar “Persona cuidada”.
+- El backend/base de datos puede usar `patients`.
+- Todas las fotos de perfil de cuidadores, familiares y persona cuidada deben ser rectangulares verticales, formato retrato aproximado 3:4, con bordes redondeados.
+
+============================================================
+1. IDENTIDAD VISUAL Y ESTÉTICA OBLIGATORIA
+============================================================
+
+La aplicación se llama Vackly.
+
+El logo debe respetar el estilo actual de “vacly”, pero corrigiendo el nombre a Vackly, añadiendo únicamente la letra k. No rediseñar el logo desde cero.
+
+Estética obligatoria:
+
+Mantener exactamente la línea visual de las imágenes adjuntas:
+
+- Fondo claro, blanco-lavanda.
+- Estética limpia, humana, amable y tecnológica.
+- Tarjetas con efecto glassmorphism.
+- Bordes redondeados grandes.
+- Sombras muy suaves estilo Apple/visionOS.
+- Mucho aire visual.
+- Tipografía sans-serif moderna.
+- Iconografía lineal fina.
+- Botones con gradiente azul/púrpura/turquesa.
+- Ilustraciones 3D del slime.
+- Microinteracciones suaves.
+- Estados visuales amables.
+- Diseño premium, sanitario y laboral a la vez.
+- Mobile compacto y eficiente.
+- Web/dashboard más aireado y SaaS.
+
+Prohibido:
+
+- UI genérica tipo admin template.
+- Tablas aburridas sin diseño.
+- Botones default.
+- Cards planas sin profundidad.
+- Interfaces saturadas.
+- Colores chillones.
+- Verde como color principal.
+- Mascotas alternativas.
+- Ilustraciones ajenas al universo visual de Vackly.
+
+La app debe parecer una extensión directa de las imágenes de referencia.
+
+============================================================
+2. DESIGN SYSTEM Y TOKENS
+============================================================
+
+Crear tokens de diseño en:
+
+/constants/design/colors.ts
+/constants/design/spacing.ts
+/constants/design/typography.ts
+/constants/design/radius.ts
+/constants/design/shadows.ts
+/constants/design/animations.ts
+/constants/design/breakpoints.ts
+
+Paleta base fusionada:
+
+- Electric Blue: #3B82F6
+- Purple: #8B5CF6
+- Soft Turquoise: #29A1A6
+- Soft Lavender: #F5F3FF
+- White: #FFFFFF
+- Glass White: rgba(255,255,255,0.60)
+- Ink: #111827
+- Navy oscuro para texto principal
+- Muted Text: #6B7280
+- Gris azulado para texto secundario
+- Bordes blancos translúcidos
+- Lavanda muy suave para separadores
+
+Gradiente principal:
+
+linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%)
+
+Gradiente secundario:
+
+linear-gradient(135deg, #29A1A6 0%, #3B82F6 45%, #8B5CF6 100%)
+
+Tipografía:
+
+- Fuente principal: Inter.
+- Fuente alternativa iOS: SF Pro.
+- Fuente alternativa Android/Web: Inter.
+- Pesos: Regular, Medium, Semibold, Bold.
+- No usar Space Grotesk.
+- Mantener una estética limpia, moderna y muy legible.
+
+Radius:
+
+- Cards: 24px
+- Inputs: 16px
+- Buttons: 18px
+- Pills: 999px
+- Modals: 28px
+- Bottom sheets: 32px
+
+Estilo:
+
+- Glassmorphism premium.
+- Blur suave.
+- Transparencia controlada.
+- Bordes blancos sutiles.
+- Sombras suaves.
+- Profundidad elegante.
+- Light mode principal.
+- Dark mode opcional desde ajustes, sin alterar el estilo base de las imágenes.
+
+============================================================
+3. MASCOTA SLIME COMO ELEMENTO CENTRAL
+============================================================
+
+La única mascota permitida es el slime azul-púrpura 3D de las imágenes proporcionadas.
+
+No crear ni rediseñar mascota.
+
+No usar:
+
+- Perezoso.
+- Personaje tipo reloj/tiempo.
+- Animales.
+- Mascotas inventadas.
+- Emojis como mascota.
+- Ilustraciones genéricas.
+
+El slime debe estar presente en todas o casi todas las pantallas de forma integrada, no como pegatina.
+
+La mascota/chatbot se llama Vackly.
+
+Debe acompañar a usuarios cuidadores y familias en tareas clave:
+
+- Login.
+- Onboarding.
+- Selección de tipo de cuenta.
+- Fichaje.
+- Pausas.
+- Sin conexión.
+- Sin datos.
+- Solicitudes.
+- Validaciones.
+- Diario de cuidados.
+- Gastos.
+- Vacaciones.
+- Bajas médicas.
+- Soporte.
+- Estados de éxito o error.
+- Mood tracker simple al finalizar jornada.
+
+Crear gestión inteligente de assets en:
+
+/constants/assets.ts
+
+No preguntar rutas de imágenes.
+
+Asumir:
+
+/assets/images/mascot
+/assets/images/branding
+/assets/images/backgrounds
+/assets/images/patterns
+/assets/images/placeholders
+
+Referenciar:
+
+mascot: {
+  idle,
+  working,
+  break,
+  happy,
+  success,
+  sad,
+  offline,
+  doctor,
+  money,
+  calendar,
+  support,
+  family,
+  security,
+  empty
+}
+
+branding: {
+  logoLight,
+  logoDark
+}
+
+backgrounds: {
+  glassGradient,
+  authGradient,
+  dashboardPattern
+}
+
+placeholders: {
+  caregiver,
+  family,
+  patient,
+  document
+}
+
+Crear componente:
+
+<SlimeMascot pose="idle" size="md" />
+
+Estados:
+
+- idle: pantallas neutras.
+- working: jornada iniciada.
+- break: pausa activa.
+- happy: acción completada.
+- success: confirmaciones importantes.
+- sad: error, incidencia o solicitud rechazada.
+- offline: modo sin conexión.
+- doctor: bajas médicas o medicación.
+- money: gastos.
+- calendar: vacaciones, permisos y festivos.
+- support: chatbot y ayuda.
+- family: entorno familia.
+- security: privacidad y protección de datos.
+- empty: pantallas sin datos.
+
+Añadir animación breathing suave para el slime.
+
+============================================================
+4. STACK TÉCNICO OBLIGATORIO
+============================================================
+
+Usar:
+
+- Expo
+- React Native
+- TypeScript strict mode
+- NativeWind
+- expo-router
+- Supabase
+- @supabase/supabase-js
+- i18next
+- lucide-react-native
+- expo-blur
+- expo-location
+- react-native-reanimated
+- react-native-gesture-handler
+- expo-haptics
+- Zustand
+- React Hook Form
+- Zod
+- AsyncStorage
+- SecureStore
+- Expo Notifications
+- Supabase Storage
+- Supabase Realtime
+
+La app debe estar preparada para iOS, Android, Web y Tablet.
+
+============================================================
+5. ARQUITECTURA MODULAR
+============================================================
+
+Crear estructura modular:
+
+/app
+  /(auth)
+  /(onboarding)
+  /(tabs)
+  /(dashboard)
+  /(admin)
+  /modals
+/components
+  /ui
+  /layout
+  /forms
+  /cards
+  /mascot
+  /navigation
+/hooks
+/lib
+/constants
+  /design
+/services
+/store
+/types
+/assets
+/i18n
+/providers
+/sql
+
+Separar:
+
+- UI.
+- Lógica de negocio.
+- Hooks.
+- Servicios.
+- Providers.
+- Estado global.
+- Assets.
+- Tokens.
+- Tipos.
+- Queries.
+- SQL.
+- RLS.
+- Seeds.
+
+El código debe ser limpio, reutilizable, escalable, tipado y production-ready.
+
+============================================================
+6. RESPONSIVE DESIGN
+============================================================
+
+Breakpoint principal:
+
+md = 768px
+
+Móvil:
+
+- Bottom Tabs.
+- Stack Navigation.
+- Cards compactas.
+- Padding reducido.
+- Navegación rápida con una mano.
+- Acciones visibles.
+- Scroll vertical eficiente.
+- UX táctil, rápida y clara.
+- Slider para acciones críticas como fichar.
+
+Tablet / Web:
+
+- Sidebar izquierda fija.
+- Topbar sticky translúcida.
+- Dashboard SaaS.
+- Layout responsive de 3 columnas.
+- Widgets desacoplados.
+- Cards más aireadas.
+- Métricas visuales.
+- Panel realtime.
+- Planner y analytics admin.
+
+Mantener consistencia visual sin desperdiciar espacio en móvil.
+
+============================================================
+7. MOTION DESIGN Y MICROINTERACCIONES
+============================================================
+
+Implementar:
+
+- Transiciones fluidas.
+- Microinteracciones.
+- Reanimated transitions.
+- Hover animations en web.
+- Skeleton shimmer.
+- Entrada staggered.
+- Spring animations.
+- Haptic feedback móvil.
+- Animación breathing para el slime.
+- Feedback visual inmediato en acciones críticas.
+
+Duraciones:
+
+- Microinteracciones: 160-220ms.
+- Transiciones: 200-300ms.
+- Pantallas: 280-360ms.
+
+============================================================
+8. COMPONENTES PREMIUM REUTILIZABLES
+============================================================
+
+Crear componentes:
+
+AppLogo
+SlimeMascot
+GlassCard
+GradientButton
+BlurModal
+SmartInput
+FloatingActionButton
+AnimatedMetricCard
+ShiftCard
+Timeline
+LiveStatusBadge
+FloatingSidebar
+GlassHeader
+AnimatedTabs
+RealtimeIndicator
+MoodSelector
+CalendarRangePicker
+LanguageSelector
+RoleSelector
+EmptyState
+DocumentUploader
+ReceiptUploader
+MedicationCard
+CareDiaryForm
+ExpenseForm
+SupportChatbot
+FAQSearch
+ProfileHeader
+TimeEntryTimeline
+ValidationCard
+RequestStatusCard
+OfflineBanner
+BottomTabs
+Sidebar
+DashboardGrid
+MetricCard
+SlideToConfirm
+SwipeToStartShift
+VerticalProfileImage
+
+Todos deben ser:
+
+- Responsive.
+- Tipados.
+- Basados en tokens.
+- Animados cuando tenga sentido.
+- Accesibles.
+- Coherentes con la estética de referencia.
+
+Componente obligatorio:
+
+VerticalProfileImage
+
+Reglas:
+
+- Todas las fotos de perfil de cuidadores, familiares y persona cuidada deben usar este componente.
+- Formato retrato vertical aproximado 3:4.
+- Bordes redondeados.
+- No usar avatares circulares.
+- No usar fotos cuadradas salvo que estén recortadas dentro del marco vertical.
+- Aplicar en cards, listados, dashboards, perfiles y detalles.
+
+============================================================
+9. AUTENTICACIÓN, ONBOARDING Y SELECCIÓN DE TIPO DE CUENTA
+============================================================
+
+Implementar autenticación real con Supabase Auth:
+
+- Login.
+- Registro.
+- Recuperación contraseña.
+- Persistencia de sesión.
+- Logout.
+- Protección de rutas.
+- Redirección por rol.
+- Metadata de usuario.
+
+Roles:
+
+type UserRole = 'caregiver' | 'family' | 'admin' | 'hr';
+
+Guardar:
+
+- role
+- full_name
+- preferred_language
+- avatar_url
+- created_at
+
+Onboarding:
+
+- Opcional solo la primera vez.
+- Slides breves.
+- Slime integrado.
+- Explicación simple del producto.
+- Posibilidad de saltar.
+- Al completar, guardar `onboarding_completed = true`.
+
+Pantalla Login:
+
+- Logo Vackly arriba.
+- Slime a la derecha o centro según dispositivo.
+- Texto: “¡Bienvenido de nuevo!”
+- Email.
+- Contraseña.
+- Recordarme.
+- Olvidé mi contraseña.
+- Botón principal con gradiente: “Iniciar sesión”.
+- Acceso con Google.
+- Acceso con Microsoft.
+- Enlace: “¿No tienes una cuenta? Crear cuenta”.
+- Selector de idioma.
+
+Pantalla Registro:
+
+Campos:
+
+- Nombre.
+- Apellidos.
+- Email.
+- Teléfono.
+- Contraseña.
+- Confirmar contraseña.
+- Aceptación de privacidad.
+- Botón “Crear cuenta”.
+
+Después del registro, mostrar onboarding opcional si es la primera vez y después pantalla de elección de rol.
+
+Pantalla Selección de tipo de cuenta:
+
+Título:
+
+¿Cómo quieres continuar?
+
+Subtítulo:
+
+Selecciona el tipo de cuenta que mejor se adapte a ti.
+
+Opciones:
+
+1. Soy cuidador
+   - Icono de corazón / manos.
+   - Texto: “Registro y gestión del tiempo dedicado al cuidado.”
+   - Slime en pose cuidador.
+
+2. Soy familia
+   - Icono de casa/familia.
+   - Texto: “Consulta y seguimiento de la atención de tu ser querido.”
+   - Slime en pose familia.
+
+Footer:
+
+Tu información está segura
+Cumplimos con los más altos estándares de privacidad y protección de datos.
+
+Guardar el rol en Supabase en la tabla `profiles`.
+
+============================================================
+10. MULTIIDIOMA
+============================================================
+
+Implementar i18next con estos idiomas:
+
+- Español
+- Inglés
+- Catalán
+- Euskera
+- Gallego
+
+Crear:
+
+/i18n/es.json
+/i18n/en.json
+/i18n/ca.json
+/i18n/eu.json
+/i18n/gl.json
+
+Persistir idioma seleccionado.
+
+El selector de idioma debe aparecer en:
+
+- Login.
+- Registro.
+- Onboarding.
+- Ajustes.
+- Perfil.
+
+============================================================
+11. BACKEND REAL CON SUPABASE
+============================================================
+
+Implementar Supabase de forma real.
+
+Crear SQL completo con:
+
+- Tablas.
+- Relaciones.
+- Índices.
+- Constraints.
+- Triggers.
+- Enums.
+- Foreign keys.
+- Timestamps.
+- Seeds de datos demo.
+- RLS production-ready.
+
+Tablas principales:
+
+profiles:
+- id
+- auth_user_id
+- role
+- first_name
+- last_name
+- full_name
+- email
+- phone
+- avatar_url
+- preferred_language
+- onboarding_completed
+- dark_mode_enabled
+- created_at
+- updated_at
+
+caregiver_profiles:
+- id
+- profile_id
+- date_of_birth
+- address
+- city
+- province
+- professional_summary
+- previous_experience
+- experience_years
+- education
+- certifications
+- visible_to_family_data
+- verified
+- created_at
+- updated_at
+
+IMPORTANTE:
+- No incluir CV/currículum.
+- No incluir subida de CV.
+- No incluir módulo de reseñas.
+- No incluir rating público del cuidador.
+- Mantener únicamente experiencia previa, formación y certificados.
+
+La familia solo debe ver:
+- Nombre.
+- Foto si está permitida.
+- Experiencia previa.
+- Años de experiencia.
+- Formación.
+- Certificados.
+- Resumen profesional.
+- Tipo de asignación si procede.
+
+La familia no debe ver:
+- DNI/NIE.
+- Dirección personal completa.
+- Datos bancarios.
+- Teléfono privado si no está autorizado.
+- Documentación laboral privada.
+- Nóminas.
+- Contratos laborales completos.
+- Información sensible del cuidador.
+- CV.
+
+family_accounts:
+- id
+- main_profile_id
+- account_name
+- created_at
+- updated_at
+
+family_members:
+- id
+- family_account_id
+- profile_id
+- role
+- permissions
+- is_primary_contact
+- invitation_status
+- created_at
+- updated_at
+
+Roles familiares:
+type FamilyMemberRole = 'primary_contact' | 'viewer' | 'manager';
+
+Permisos:
+- Ver diario.
+- Ver horas.
+- Validar fichajes.
+- Ver gastos.
+- Editar datos de persona cuidada.
+- Gestionar cuidadores.
+- Invitar familiares.
+- Ver documentos de persona cuidada.
+
+patients:
+Backend: `patients`.
+Interfaz: “Persona cuidada”.
+
+- id
+- family_account_id
+- first_name
+- last_name
+- date_of_birth
+- address
+- health_card_number
+- medical_history
+- care_needs
+- allergies
+- limitations
+- prescribed_medication
+- routines
+- cognitive_status
+- mobility_status
+- notes
+- created_at
+- updated_at
+
+No crear campo específico de “trastornos”; esa información debe quedar dentro de historial médico, estado cognitivo o notas, según corresponda.
+
+patient_documents:
+- id
+- patient_id
+- uploaded_by
+- document_type
+- title
+- file_url
+- file_name
+- mime_type
+- size_bytes
+- created_at
+
+Tipos:
+- Informe médico.
+- Pauta de medicación.
+- Documento sanitario.
+- Autorización.
+- Otro.
+
+emergency_contacts:
+- id
+- patient_id
+- name
+- relationship
+- phone
+- email
+- type
+- is_primary
+- created_at
+- updated_at
+
+caregiver_assignments:
+- id
+- caregiver_profile_id
+- family_account_id
+- patient_id
+- start_date
+- end_date
+- status
+- schedule
+- contract_type
+- is_current
+- created_at
+- updated_at
+
+IMPORTANTE:
+- Esta tabla gestiona asignaciones existentes.
+- La app no gestiona contrataciones.
+- La familia no puede contratar cuidadores desde la app.
+- No incluir marketplace, búsqueda de cuidadores para contratar ni flujo de contratación.
+
+time_entries:
+- id
+- caregiver_profile_id
+- family_account_id
+- patient_id
+- assignment_id
+- type
+- timestamp
+- source
+- latitude
+- longitude
+- nfc_verified
+- geofence_verified
+- family_validated
+- family_validated_by
+- family_validated_at
+- offline_created
+- sync_status
+- correction_requested
+- created_at
+
+Tipos:
+type TimeEntryType = 'clock_in' | 'clock_out' | 'break_start' | 'break_end';
+
+time_corrections:
+- id
+- time_entry_id
+- caregiver_profile_id
+- requested_type
+- requested_timestamp
+- reason
+- status
+- reviewed_by
+- reviewed_at
+- created_at
+
+Estados:
+type RequestStatus = 'pending' | 'approved' | 'rejected';
+
+care_diary_entries:
+- id
+- caregiver_profile_id
+- family_account_id
+- patient_id
+- assignment_id
+- date
+- meals
+- walks
+- hygiene
+- mood
+- incidents
+- general_notes
+- created_at
+- updated_at
+
+medication_administrations:
+- id
+- diary_entry_id
+- medication_name
+- dosage
+- scheduled_time
+- administered_time
+- administered
+- notes
+- created_at
+
+expenses:
+- id
+- caregiver_profile_id
+- family_account_id
+- patient_id
+- assignment_id
+- category
+- amount
+- description
+- receipt_url
+- expense_date
+- status
+- created_at
+- updated_at
+
+vacation_requests:
+- id
+- caregiver_profile_id
+- start_date
+- end_date
+- days_count
+- reason
+- status
+- reviewed_by
+- reviewed_at
+- created_at
+
+personal_day_requests:
+- id
+- caregiver_profile_id
+- date
+- reason
+- status
+- reviewed_by
+- reviewed_at
+- created_at
+
+sick_leaves:
+- id
+- caregiver_profile_id
+- sick_leave_type
+- start_date
+- estimated_end_date
+- actual_end_date
+- comments
+- medical_document_url
+- status
+- hr_notified
+- created_at
+
+labor_documents:
+- id
+- caregiver_profile_id
+- document_type
+- title
+- file_url
+- period_month
+- period_year
+- created_at
+
+Tipos:
+- Contrato.
+- Nómina.
+- Certificado.
+- Anexo.
+- Otro.
+
+mood_checks:
+- id
+- caregiver_profile_id
+- time_entry_id
+- mood
+- note
+- created_at
+
+No crear analytics emocionales avanzados. Solo selector simple al finalizar jornada.
+
+notifications:
+- id
+- profile_id
+- title
+- message
+- type
+- related_entity_type
+- related_entity_id
+- read_at
+- push_sent
+- created_at
+
+support_tickets:
+- id
+- profile_id
+- category
+- message
+- status
+- created_at
+- updated_at
+
+chatbot_faqs:
+- id
+- question
+- answer
+- category
+- role_visibility
+- created_at
+
+admin_analytics_snapshots:
+- id
+- period_start
+- period_end
+- total_hours
+- total_time_entries
+- pending_validations
+- offline_syncs
+- total_absences
+- vacation_requests_count
+- sick_leaves_count
+- incidents_count
+- created_at
+
+También se pueden calcular métricas en views SQL.
+
+============================================================
+12. ROW LEVEL SECURITY Y SEGURIDAD
+============================================================
+
+Crear políticas completas de Row Level Security:
+
+- Datos privados por usuario.
+- Acceso por roles.
+- Separación cuidador/familia/admin/hr.
+- Ownership validation.
+- Protección de persona cuidada.
+- Protección de jornadas.
+- Protección de documentos.
+- Protección de solicitudes.
+- Permisos production-ready.
+
+Cuidador puede:
+- Ver su perfil.
+- Editar su perfil.
+- Ver sus fichajes.
+- Crear fichajes.
+- Solicitar correcciones.
+- Ver sus vacaciones.
+- Solicitar vacaciones.
+- Ver sus bajas.
+- Subir justificantes.
+- Ver sus documentos laborales.
+- Crear diarios de cuidado de personas cuidadas asignadas.
+- Crear gastos de personas cuidadas asignadas.
+- Ver datos necesarios de la persona cuidada asignada.
+- Ver documentos autorizados de la persona cuidada asignada.
+- Ver sus notificaciones.
+
+Cuidador no puede:
+- Ver información de familias no asignadas.
+- Ver datos de otros cuidadores.
+- Validar sus propios fichajes como familia.
+- Aprobar sus propias vacaciones o bajas.
+- Ver documentos laborales de otros cuidadores.
+
+Familia puede:
+- Ver su cuenta familiar.
+- Ver la persona cuidada.
+- Editar datos de la persona cuidada según permisos.
+- Subir/ver documentos de persona cuidada según permisos.
+- Ver cuidadores asignados.
+- Ver fichajes de cuidadores asignados.
+- Validar fichajes.
+- Ver diario de cuidados.
+- Ver medicación administrada.
+- Ver gastos y tickets.
+- Ver histórico de cuidadores.
+- Ver sus notificaciones.
+- Invitar familiares si tiene permisos.
+
+Familia no puede:
+- Ver documentación laboral privada del cuidador.
+- Ver nóminas.
+- Ver contratos laborales completos del cuidador.
+- Ver CV.
+- Ver información sensible no autorizada.
+- Ver familias ajenas.
+- Contratar cuidadores desde la app.
+
+Admin / RRHH puede:
+- Ver solicitudes.
+- Aprobar/rechazar vacaciones.
+- Gestionar bajas.
+- Ver documentación laboral.
+- Gestionar asignaciones.
+- Ver analytics.
+- Ver planner.
+- Ver heatmaps.
+- Revisar incidencias.
+- Gestionar notificaciones.
+
+============================================================
+13. STORAGE DE SUPABASE
+============================================================
+
+Crear buckets fusionados, sin CV:
+
+- avatars
+- caregiver-certificates
+- contracts
+- medical-documents
+- justifications
+- receipts
+- labor-documents
+- patient-documents
+
+Implementar:
+
+- Upload.
+- Preview.
+- Delete.
+- Download.
+- Signed URLs.
+- Validación de tipo/tamaño.
+- Permisos por rol.
+- Políticas Storage por rol.
+
+Funcionalidades:
+
+- Subir avatar.
+- Subir certificados.
+- Subir justificantes médicos.
+- Subir tickets de gasto.
+- Subir contratos y nóminas.
+- Subir documentos de persona cuidada.
+- Descargar documentación autorizada.
+
+============================================================
+14. REALTIME
+============================================================
+
+Usar supabase.channel().
+
+Sincronizar en vivo:
+
+- Fichajes.
+- Estado trabajador.
+- Jornadas.
+- Solicitudes.
+- Persona cuidada.
+- Documentos.
+- Notificaciones.
+- Panel admin.
+- Monitor operativo.
+- Diario de cuidados.
+- Gastos.
+- Medicación administrada.
+
+============================================================
+15. NOTIFICACIONES INTERNAS Y PUSH
+============================================================
+
+Implementar notificaciones internas usando tabla `notifications`.
+
+Implementar push notifications usando Expo Notifications.
+
+Eventos que generan notificación:
+
+- Fichaje registrado.
+- Fichaje pendiente de validar.
+- Fichaje validado.
+- Gasto pendiente de revisar.
+- Gasto validado/rechazado.
+- Solicitud aprobada/rechazada.
+- Baja enviada.
+- Justificante subido.
+- Medicación registrada.
+- Diario actualizado.
+- Error de sincronización.
+- Nuevo ticket de soporte.
+- Respuesta de soporte.
+
+============================================================
+16. GEOLOCALIZACIÓN, NFC Y FICHAJE
+============================================================
+
+Usar expo-location.
+
+Implementar:
+
+- Permisos.
+- Geofencing.
+- Validación de ubicación.
+- Distancia al domicilio/centro.
+- Simulación NFC.
+- Historial de fichajes.
+- Errores claros.
+
+UX obligatoria:
+
+- “Desliza para iniciar jornada”.
+- “Desliza para pausar”.
+- “Desliza para finalizar”.
+
+Actualizar slime según estado:
+
+- idle → sin jornada.
+- working → jornada activa.
+- break → descanso.
+- happy/success → jornada finalizada o acción correcta.
+- sad → error.
+- offline → sin conexión.
+
+============================================================
+17. MODO OFFLINE AUTOMÁTICO
+============================================================
+
+Implementar hook useNetworkStatus().
+
+Si no hay conexión:
+
+- Activar modo offline automáticamente.
+- Mostrar banner suave: “Modo sin conexión activo”.
+- Cambiar slime a offline.
+- Permitir fichar.
+- Guardar acciones en almacenamiento local.
+- Crear cola de sincronización offline_queue.
+
+Al recuperar conexión:
+
+- Sincronizar fichajes pendientes.
+- Resolver conflictos.
+- Mostrar notificación: “Tus registros se han sincronizado correctamente”.
+
+Estados:
+type SyncStatus = 'synced' | 'pending' | 'failed';
+
+============================================================
+18. CUENTA FAMILIA
+============================================================
+
+La cuenta familia tendrá un dashboard propio.
+
+Navegación móvil familia:
+
+1. Inicio
+2. Persona cuidada
+3. Cuidadores
+4. Diario
+5. Más
+
+En “Más”:
+
+- Gastos
+- Contactos de emergencia
+- Familiares con acceso
+- Documentos de persona cuidada
+- Soporte
+- Notificaciones
+- Ajustes
+- Privacidad
+- Cerrar sesión
+
+Navegación web familia:
+
+- Dashboard
+- Persona cuidada
+- Cuidadores
+- Diario de cuidados
+- Gastos
+- Documentos
+- Contactos de emergencia
+- Usuarios familiares
+- Soporte
+- Notificaciones
+- Ajustes
+
+Pantallas familia:
+
+18.1 Dashboard familia
+- Saludo: “Buenos días, María”.
+- Slime en pose family o happy.
+- Card “Cuidador actual”: nombre, estado, entrada, pausa, salida estimada.
+- Card “Persona cuidada”: nombre, foto rectangular vertical, información crítica, alertas.
+- Card “Resumen de hoy”: horas, actualización, diario.
+- Card “Última nota del diario”.
+- Card “Notificaciones recientes”.
+- Botones “Ver diario” y “Validar fichajes pendientes”.
+
+18.2 Persona cuidada
+- Datos personales.
+- Historial médico.
+- Necesidades de cuidado.
+- Alergias.
+- Medicación pautada.
+- Documentos.
+- Contactos de emergencia.
+- Edición por secciones con glass cards.
+
+18.3 Documentos de persona cuidada
+- Slime security o doctor.
+- Lista de documentos.
+- Filtros por tipo.
+- Botón “Subir documento”.
+- Vista previa, descarga y eliminación si tiene permisos.
+
+18.4 Familiares con acceso
+- Interlocutor principal.
+- Fotos rectangulares verticales.
+- Lista de familiares.
+- Roles y permisos.
+- Botón “Invitar familiar”.
+
+18.5 Gestión de cuidadores
+IMPORTANTE:
+- La familia puede consultar cuidadores asignados.
+- La familia no puede contratar cuidadores.
+- No crear marketplace.
+- No crear botón “Contratar cuidador”.
+- No crear búsqueda pública de cuidadores.
+
+Cuidador actual:
+- Foto rectangular vertical.
+- Nombre.
+- Experiencia previa.
+- Formación.
+- Certificados visibles.
+- Estado actual.
+- Horario asignado.
+- Fecha de inicio.
+- Botones: “Ver perfil público”, “Ver fichajes”, “Ver gastos”, “Validar fichaje pendiente”.
+
+Perfil público del cuidador:
+- Nombre.
+- Foto rectangular vertical.
+- Experiencia previa.
+- Formación.
+- Certificados.
+- Resumen profesional.
+- Asignación actual.
+
+No mostrar: reseñas, rating, CV, nóminas, contratos, datos privados.
+
+18.6 Validación de fichajes
+- Tipo de fichaje.
+- Fecha y hora.
+- Ubicación aproximada.
+- NFC.
+- Geofence.
+- Estado offline/sincronizado.
+- Botones “Validar fichaje” y “Reportar incidencia”.
+
+18.7 Histórico de cuidadores
+- Foto rectangular vertical.
+- Nombre.
+- Periodo de cuidado.
+- Persona cuidada.
+- Horas totales.
+- Acceso al histórico de diarios.
+
+18.8 Diario de cuidados familia
+- Selector de fecha.
+- Slime idle o doctor.
+- Resumen del día.
+- Comidas, paseos, higiene, estado de ánimo, incidencias, notas.
+- Medicación administrada con hora.
+- Nombre del cuidador que registró la información.
+
+18.9 Gastos familia
+- Resumen mensual.
+- Total gastado.
+- Categorías.
+- Lista de gastos.
+- Foto del ticket.
+- Estado.
+- Validar gasto.
+- Reportar incidencia.
+
+============================================================
+19. CUENTA CUIDADOR
+============================================================
+
+Navegación móvil cuidador:
+
+1. Inicio
+2. Historial
+3. Calendario
+4. Perfil
+5. Más
+
+En “Más”:
+
+- Vacaciones
+- Libre disposición
+- Bajas médicas
+- Documentación laboral
+- Familias habituales
+- Soporte
+- Notificaciones
+- Ajustes
+- Cerrar sesión
+
+Pantallas cuidador:
+
+19.1 Dashboard cuidador
+- Logo Vackly.
+- Saludo: “¡Buenos días, Laura!”
+- Slime dinámico.
+- Estado actual.
+- Horario de hoy.
+- Resumen semanal básico.
+- Próxima pausa.
+- Persona cuidada asignada.
+- Notificaciones recientes.
+- Botón contextual de fichaje.
+- Accesos rápidos: Diario, Gasto, Corrección, Soporte.
+
+19.2 Fichajes
+Debe permitir entrada, salida, inicio pausa, fin pausa, timestamps reales, Supabase, offline, corrección y modo cuidadora interna placeholder.
+
+Iniciar turno:
+- Gradiente azul/púrpura o turquesa/púrpura.
+- Slime working.
+- “¡Vamos allá!”
+- “Tu jornada comienza ahora”.
+- Horario programado.
+- “Desliza para iniciar”.
+- NFC simulado.
+- Geofence.
+
+Jornada activa:
+- Timer.
+- Slime working.
+- Entrada, pausa, salida estimada.
+- Iniciar pausa.
+- Finalizar turno.
+- Diario, medicación, gasto, corrección.
+
+Pausa activa:
+- Fondo púrpura.
+- Slime break.
+- Timer.
+- “Finalizar pausa”.
+
+Finalizar turno:
+- Slime happy/success.
+- Resumen del día.
+- “Desliza para finalizar”.
+- Mood tracker simple.
+
+19.3 Mood tracker simple
+Modal al finalizar jornada:
+- ¿Cómo te has sentido hoy?
+- Bien, Cansado, Tranquilo, Estresado, Necesito apoyo.
+- Nota opcional.
+- Guardar estado.
+
+19.4 Corrección de fichajes
+Casos:
+- Olvidé fichar entrada.
+- Olvidé fichar salida.
+- Entrada tarde.
+- Salida tarde.
+- Salida anticipada.
+- Error en pausa.
+- Otro.
+
+Formulario:
+- Fecha.
+- Tipo.
+- Hora correcta.
+- Motivo.
+- Comentarios.
+
+19.5 Modo cuidadora interna
+Placeholder con posibles módulos futuros:
+- Pernocta.
+- Guardias.
+- Descansos semanales.
+- Régimen interno.
+- Horas de presencia.
+- Horas efectivas.
+- Sustituciones.
+
+19.6 Diario de cuidados cuidador
+- Selector de persona cuidada/asignación.
+- Fecha.
+- Slime doctor/family.
+- Comidas, paseos, higiene, estado de ánimo, incidencias, notas generales.
+- Guardar diario.
+- Realtime con familia.
+
+19.7 Medicación administrada
+- Lista de medicación pautada.
+- Hora pautada.
+- Dosis.
+- Instrucciones.
+- Marcar como administrada.
+- Hora administración.
+- Observaciones.
+
+19.8 Gastos
+- Slime money.
+- Presupuesto disponible si existe.
+- Total mes.
+- Lista gastos.
+- Añadir gasto con ticket.
+- Subida a bucket receipts.
+
+19.9 Ausencias y permisos
+- Vacaciones.
+- Libre disposición.
+- Bajas médicas.
+- Calendario.
+- Festivos nacionales.
+- Gráfica y calendario.
+
+19.10 Vacaciones
+- Resumen, solicitudes, historial.
+- Solicitar vacaciones con calendario de rango.
+- Cálculo automático.
+- Festivos nacionales.
+
+19.11 Libre disposición
+- Días disponibles.
+- Días usados.
+- Historial.
+- Solicitar día libre.
+
+19.12 Bajas médicas
+- Estado actual.
+- Historial.
+- Nueva baja.
+- Justificante médico.
+- Notificación a RRHH.
+
+19.13 Documentación laboral
+- Contratos.
+- Nóminas mensuales.
+- Certificados.
+- Anexos.
+- No CV.
+- Visible solo para cuidador y RRHH/admin.
+
+19.14 Perfil del cuidador
+- Información personal.
+- Experiencia previa.
+- Formación.
+- Certificados.
+- Familias habituales.
+- Contrato.
+- Documentos.
+- Ajustes.
+- Cerrar sesión.
+
+No incluir reseñas, valoraciones, rating, CV ni disponibilidad/preferencias.
+
+19.15 Familias habituales
+- Habituales.
+- Completadas.
+- Disponibles solo como asignaciones internas si existen.
+- No contratación.
+- Cards con foto rectangular vertical.
+
+19.16 Experiencia previa, formación y certificados
+- Experiencia previa.
+- Formación.
+- Certificados.
+- No CV completo.
+
+============================================================
+20. SOPORTE Y CHATBOT
+============================================================
+
+Ambos tipos de cuenta deben tener soporte.
+
+La mascota/chatbot se llama Vackly.
+
+Pantalla Soporte:
+- Slime support.
+- “¿En qué podemos ayudarte?”
+- Buscador FAQ.
+- Categorías: Fichajes, Vacaciones, Bajas médicas, Diario, Gastos, Cuenta y privacidad, Familia, Cuidador.
+- Botón “Hablar con Vackly”.
+- Botón “Crear ticket de soporte”.
+
+Chatbot FAQ:
+- Basado en chatbot_faqs.
+- Matching por palabras clave o búsqueda simple.
+- Crear ticket si no encuentra respuesta.
+
+============================================================
+21. PANEL ADMIN / RRHH WEB
+============================================================
+
+Solo visible para roles admin y hr.
+
+Sidebar admin:
+- Dashboard.
+- Monitor en vivo.
+- Planner.
+- Analytics.
+- Heatmaps.
+- Cuidadores.
+- Familias.
+- Personas cuidadas.
+- Fichajes.
+- Correcciones.
+- Vacaciones.
+- Días libres.
+- Bajas médicas.
+- Documentación laboral.
+- Notificaciones.
+- Soporte.
+- Ajustes.
+
+21.1 Monitor en vivo
+- Cuidadores en jornada.
+- Cuidadores en pausa.
+- Cuidadores sin fichar.
+- Fichajes pendientes de sincronizar.
+- Fichajes pendientes de validación familiar.
+- Incidencias.
+- Solicitudes pendientes.
+- Notificaciones recientes.
+- Realtime.
+
+21.2 Planner
+Planner drag & drop solo para visualizar jornadas y turnos.
+
+IMPORTANTE:
+- La app no gestiona contrataciones.
+- El planner no debe servir para que familias contraten.
+- El planner no debe crear marketplace.
+- No incluir búsqueda pública de cuidadores.
+- Puede mostrar calendario operativo de jornadas, turnos y asignaciones ya existentes.
+- Puede permitir ajustes internos por admin/RRHH si la asignación ya existe.
+
+Funcionalidades:
+- Vista día, semana y mes.
+- Filtros por cuidador, familia, persona cuidada y estado.
+- Drag & drop para mover visualmente turnos internos si admin/RRHH tiene permisos.
+- Confirmación antes de actualizar.
+- Notificación a perfiles afectados.
+- Vista de conflictos.
+- Vista de ausencias.
+
+21.3 Analytics completos
+Métricas:
+- Horas trabajadas.
+- Jornadas completadas.
+- Fichajes por periodo.
+- Ausencias.
+- Vacaciones.
+- Bajas.
+- Días libres.
+- Fichajes pendientes.
+- Validaciones familiares.
+- Sincronizaciones offline.
+- Incidencias.
+- Actividad por cuidador.
+- Actividad por familia.
+- Actividad por persona cuidada.
+- Gastos por categoría.
+- Gastos por periodo.
+- Solicitudes aprobadas/rechazadas.
+- Notificaciones enviadas.
+
+21.4 Heatmaps
+Incluir ambos:
+- Heatmap de fichajes por horas/días.
+- Heatmap de incidencias y ausencias.
+
+21.5 Aprobador RRHH
+- Aprobar/rechazar vacaciones.
+- Aprobar/rechazar días libres.
+- Gestionar bajas.
+- Revisar justificantes.
+- Gestionar documentación laboral.
+- Revisar correcciones de fichajes.
+- Crear notificaciones.
+
+============================================================
+22. ESTADÍSTICAS DEL CUIDADOR
+============================================================
+
+No crear sección avanzada de estadísticas del cuidador más allá del resumen de horas.
+
+Permitido:
+- Resumen semanal.
+- Resumen mensual básico.
+- Horas trabajadas.
+- Días completados.
+- Historial de jornadas.
+- Total de pausas.
+- Estado de solicitudes.
+
+No incluir:
+- Rating.
+- Reseñas.
+- Métricas de valoración.
+- Ranking.
+- Scoring público.
+- Analytics avanzados de rendimiento para el cuidador.
+
+Los analytics avanzados solo pertenecen al panel admin/RRHH.
+
+============================================================
+23. PANTALLAS OBLIGATORIAS
+============================================================
+
+Autenticación:
+1. Login.
+2. Registro.
+3. Recuperar contraseña.
+4. Onboarding opcional primera vez.
+5. Selector idioma.
+6. Selección soy cuidador / soy familia.
+
+Cuidador:
+1. Dashboard cuidador.
+2. Iniciar turno.
+3. Jornada activa.
+4. Pausa activa.
+5. Finalizar turno.
+6. Mood tracker simple post-jornada.
+7. Historial de jornadas.
+8. Detalle de jornada.
+9. Corrección de fichaje.
+10. Mis alteraciones.
+11. Diario de cuidados.
+12. Registrar medicación.
+13. Gastos.
+14. Añadir gasto con foto de ticket.
+15. Vacaciones resumen.
+16. Solicitar vacaciones.
+17. Solicitudes de vacaciones.
+18. Libre disposición.
+19. Solicitar día libre.
+20. Bajas laborales.
+21. Nueva baja con justificante.
+22. Documentación laboral.
+23. Contrato actual.
+24. Nóminas.
+25. Mi perfil.
+26. Familias habituales.
+27. Experiencia previa, formación y certificados.
+28. Soporte.
+29. Chatbot FAQ Vackly.
+30. Notificaciones.
+31. Modo cuidadora interna placeholder.
+
+Familia:
+1. Dashboard familia.
+2. Persona cuidada resumen.
+3. Editar persona cuidada.
+4. Historial médico.
+5. Necesidades de cuidado.
+6. Medicación pautada.
+7. Documentos de persona cuidada.
+8. Contactos de emergencia.
+9. Familiares con acceso.
+10. Invitar familiar.
+11. Gestión de cuidadores.
+12. Cuidador actual.
+13. Perfil público del cuidador.
+14. Histórico de cuidadores.
+15. Fichajes del cuidador.
+16. Validar fichaje.
+17. Diario de cuidados.
+18. Detalle de medicación administrada.
+19. Incidencias.
+20. Gastos.
+21. Detalle de gasto con ticket.
+22. Soporte.
+23. Chatbot FAQ Vackly.
+24. Notificaciones.
+
+Admin / RRHH web:
+1. Dashboard admin.
+2. Monitor en vivo.
+3. Planner.
+4. Analytics.
+5. Heatmaps.
+6. Listado de cuidadores.
+7. Listado de familias.
+8. Listado de personas cuidadas.
+9. Fichajes pendientes.
+10. Correcciones pendientes.
+11. Vacaciones pendientes.
+12. Días libres pendientes.
+13. Bajas médicas.
+14. Documentación laboral.
+15. Notificaciones.
+16. Tickets soporte.
+
+============================================================
+24. INTERACCIONES OBLIGATORIAS
+============================================================
+
+Cada botón debe ejecutar una acción real:
+
+- Navegar.
+- Crear registro en Supabase.
+- Actualizar estado.
+- Subir archivo.
+- Descargar documento.
+- Sincronizar offline.
+- Validar fichaje.
+- Crear solicitud.
+- Enviar ticket.
+- Cambiar idioma.
+- Crear notificación.
+- Enviar push si aplica.
+- Abrir modal.
+- Cerrar sesión.
+- Cambiar tema light/dark opcional.
+- Filtrar dashboard.
+- Actualizar planner.
+- Exportar analytics si se implementa.
+
+No dejar botones decorativos sin funcionalidad.
+
+============================================================
+25. NOTIFICACIONES Y MICROINTERACCIONES
+============================================================
+
+Crear notificaciones internas tipo toast/card:
+
+- Entrada registrada.
+- Salida registrada.
+- Pausa iniciada.
+- Pausa finalizada.
+- Registro guardado offline.
+- Sincronización completada.
+- Solicitud enviada.
+- Solicitud aprobada.
+- Solicitud rechazada.
+- Gasto guardado.
+- Gasto validado.
+- Diario actualizado.
+- Medicación registrada.
+- Justificante subido.
+- Documento subido.
+- Fichaje validado por familia.
+- Error de conexión.
+
+Usar slime en estados importantes.
+
+============================================================
+26. UX Y ACCESIBILIDAD
+============================================================
+
+Priorizar:
+
+- Velocidad percibida.
+- Claridad.
+- Accesibilidad.
+- Ergonomía móvil.
+- Feedback visual.
+- Sensación premium.
+
+Implementar:
+
+- Labels accesibles.
+- Contraste adecuado.
+- Light mode principal.
+- Dark mode opcional.
+- Focus visible en web.
+- Navegación teclado.
+- Errores claros.
+- Soporte screen reader.
+- Estados loading.
+- Estados empty.
+- Estados error.
+- Skeleton loading.
+- Confirmaciones para acciones críticas.
+
+Empty states:
+
+Cada módulo debe tener empty states con:
+
+- Slime integrado.
+- Mensaje humano.
+- Explicación breve.
+- Acción primaria real.
+- Diseño premium.
+
+Ejemplos:
+- “No hay jornadas registradas todavía”.
+- “Vackly está esperando la primera actividad”.
+- “Aún no tienes personas cuidadas asignadas”.
+- “No hay documentos subidos”.
+
+============================================================
+27. PRIVACIDAD Y SEGURIDAD
+============================================================
+
+La aplicación trabaja con datos sensibles laborales y sociosanitarios.
+
+Implementar:
+
+- RLS.
+- Separación estricta por roles.
+- Validación de permisos.
+- No mostrar datos privados del cuidador a la familia.
+- No mostrar datos médicos a usuarios no autorizados.
+- Protección de documentos.
+- Storage con políticas por rol.
+- Registro de validaciones importantes.
+- SecureStore para tokens/sesión sensible si aplica.
+- Validación con Zod.
+- Formularios con React Hook Form.
+- Sanitización de inputs.
+- Signed URLs para documentos privados.
+
+============================================================
+28. HOOKS OBLIGATORIOS
+============================================================
+
+Crear:
+
+useAuth()
+useRole()
+useNetworkStatus()
+useOfflineQueue()
+useTimeTracking()
+useCareDiary()
+useMedication()
+useExpenses()
+useVacationRequests()
+usePersonalDayRequests()
+useSickLeaves()
+useLaborDocuments()
+usePatientDocuments()
+useFamilyAccount()
+usePatient()
+useSupportChatbot()
+useRealtimeDashboard()
+useNotifications()
+usePushNotifications()
+usePlanner()
+useAdminAnalytics()
+useHeatmaps()
+useMoodCheck()
+useTheme()
+useLanguage()
+
+============================================================
+29. SERVICIOS OBLIGATORIOS
+============================================================
+
+Crear:
+
+/lib/supabase.ts
+/services/auth.service.ts
+/services/timeTracking.service.ts
+/services/offlineQueue.service.ts
+/services/careDiary.service.ts
+/services/medication.service.ts
+/services/expenses.service.ts
+/services/vacations.service.ts
+/services/personalDays.service.ts
+/services/sickLeaves.service.ts
+/services/documents.service.ts
+/services/patientDocuments.service.ts
+/services/family.service.ts
+/services/patient.service.ts
+/services/support.service.ts
+/services/storage.service.ts
+/services/notifications.service.ts
+/services/pushNotifications.service.ts
+/services/planner.service.ts
+/services/adminAnalytics.service.ts
+/services/heatmaps.service.ts
+/services/mood.service.ts
+
+============================================================
+30. FLUJOS PRINCIPALES
+============================================================
+
+Flujo cuidador:
+1. Inicia sesión.
+2. Ve onboarding opcional si es primera vez.
+3. Si no tiene jornada iniciada, ve “Iniciar turno”.
+4. Desliza para iniciar.
+5. Se registra entrada con timestamp, ubicación y NFC/geofence.
+6. Si no hay conexión, se guarda offline.
+7. Durante la jornada puede pausar, finalizar pausa, rellenar diario, registrar medicación, subir gasto y solicitar corrección.
+8. Al terminar, desliza para finalizar jornada.
+9. Se genera resumen.
+10. Se muestra mood tracker simple.
+11. La familia puede validar el fichaje.
+12. RRHH puede consultar incidencias.
+
+Flujo familia:
+1. Inicia sesión.
+2. Ve onboarding opcional si es primera vez.
+3. Consulta estado actual del cuidador.
+4. Consulta persona cuidada.
+5. Consulta documentos.
+6. Consulta diario.
+7. Revisa medicación administrada.
+8. Valida fichajes pendientes.
+9. Consulta gastos.
+10. Invita familiares con permisos.
+11. Accede a soporte.
+
+============================================================
+31. EJEMPLOS DE INTERFACES
+============================================================
+
+Login:
+- Fondo #F5F3FF.
+- Card blanca glass.
+- Logo Vackly.
+- Slime idle.
+- Campos redondeados.
+- Iconos lineales.
+- Botón gradiente azul-púrpura.
+- Google/Microsoft.
+- Selector idioma.
+
+Selección de cuenta:
+- Card “Soy cuidador”.
+- Card “Soy familia”.
+- Slime integrado.
+- Texto de seguridad.
+
+Fichaje:
+- “¡Vamos allá!”
+- “Tu jornada comienza ahora”.
+- Horario programado.
+- “Desliza para iniciar”.
+- Slime working.
+- Registro real en Supabase.
+
+Diario:
+- Comidas.
+- Paseos.
+- Higiene.
+- Estado de ánimo.
+- Medicación administrada.
+- Incidencias.
+- Notas generales.
+- Guardar diario.
+
+Gastos:
+- Total del mes.
+- Categorías.
+- Ticket.
+- Guardar gasto.
+
+Vacaciones:
+- Días totales.
+- Pendientes.
+- Aprobados.
+- Disfrutados.
+- Restantes.
+- Calendario de rango.
+
+Bajas:
+- Estado actual.
+- Nueva baja.
+- Justificante.
+- Enviar solicitud.
+
+Soporte:
+- Soporte Vackly.
+- FAQ.
+- Chatbot.
+- Crear ticket.
+
+============================================================
+32. ENTREGA FINAL ESPERADA DE LA IA
+============================================================
+
+La IA debe entregar:
+
+1. Código completo funcional.
+2. Estructura de carpetas.
+3. Design system.
+4. Tokens de diseño.
+5. Componentes reutilizables.
+6. Pantallas principales.
+7. Hooks.
+8. Servicios.
+9. Providers.
+10. Store global Zustand.
+11. SQL completo de Supabase.
+12. Políticas RLS.
+13. Buckets de Storage.
+14. Datos seed de ejemplo.
+15. Estilos NativeWind.
+16. Navegación móvil y web.
+17. Modo offline funcional.
+18. Realtime para dashboards.
+19. Chatbot FAQ.
+20. Notificaciones internas.
+21. Push notifications con Expo Notifications.
+22. Planner admin.
+23. Analytics admin.
+24. Heatmaps admin.
+25. Geolocalización y geofence.
+26. Simulación NFC.
+27. i18n completo.
+28. Documentación breve de instalación.
+
+============================================================
+33. REGLA FINAL DE ESTÉTICA
+============================================================
+
+No modificar la estética de las imágenes de referencia.
+
+La app debe conservar:
+
+- El slime azul-púrpura.
+- La paleta.
+- Los degradados.
+- Los botones.
+- Las cards.
+- Los iconos lineales.
+- La composición limpia.
+- El tono amable.
+- El diseño glassmorphism.
+- El logo adaptado únicamente de “Vacly” a “Vackly”.
+- Las fotos de perfil rectangulares verticales.
+
+No introducir estilos oscuros salvo dark mode opcional desde ajustes, manteniendo la estética base.
+
+No cambiar la mascota.
+No añadir mascotas alternativas.
+No usar ilustraciones ajenas al universo visual de Vackly.
+
+============================================================
+34. EXCLUSIONES OBLIGATORIAS
+============================================================
+
+No incluir:
+
+- Reseñas.
+- Reviews.
+- Valoraciones públicas.
+- Rating del cuidador.
+- Distribución por estrellas.
+- CV/currículum.
+- Bucket `cv`.
+- Subida de CV.
+- Marketplace de cuidadores.
+- Contratación de cuidadores por parte de familias.
+- Búsqueda pública de cuidadores.
+- Botón “Contratar”.
+- Ranking de cuidadores.
+- Analytics emocionales avanzados.
+- Disponibilidad/preferencias del cuidador.
+- Campo específico “trastornos”; usar historial médico/notas/estado cognitivo.
+- Mascotas alternativas.
+
+============================================================
+35. OBJETIVO PRINCIPAL
+============================================================
+
+Construir Vackly, una app integral para:
+
+- Control de presencia laboral de cuidadores.
+- Registro de entradas, salidas y pausas.
+- Validación de fichajes por parte de la familia.
+- Modo offline con sincronización posterior.
+- Geolocalización/geofence.
+- Simulación NFC.
+- Gestión de diario de cuidados.
+- Registro de medicación administrada.
+- Control de gastos y tickets.
+- Gestión de vacaciones, permisos y bajas.
+- Consulta de documentación laboral.
+- Gestión de persona cuidada.
+- Documentos de persona cuidada.
+- Multiusuario familiar.
+- Soporte con chatbot FAQ llamado Vackly.
+- Notificaciones internas y push.
+- Panel web para administración y RRHH.
+- Planner operativo.
+- Analytics completos.
+- Heatmaps de fichajes, incidencias y ausencias.
+
+Todo con una experiencia visual premium, humana, clara, cálida y fiel a la estética de referencia.
