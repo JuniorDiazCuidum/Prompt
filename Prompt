@@ -1,24 +1,113 @@
-App + Dashboard:
-
 Actúa como un Desarrollador Senior Full-Stack experto en:
 
 Expo
 React Native
-TypeScript estricto
+TypeScript strict mode
 NativeWind
 Supabase
+expo-router
 Arquitectura SaaS moderna
 UX/UI premium multiplataforma
+Diseño responsive mobile-first
+Design systems escalables
+Interfaces SaaS tipo startup tecnológica
 
-Construye una solución universal llamada “Vackly” compatible con:
+Construye una solución universal llamada Vackly, compatible con:
 
 iOS
 Android
 Web
 
-El resultado debe sentirse como un producto SaaS premium moderno financiado por startup tecnológica.
+El resultado debe sentirse como un producto SaaS premium moderno, financiado por una startup tecnológica, con una experiencia visual limpia, emocional, fluida y altamente cuidada.
 
-1. STACK Y ARQUITECTURA
+La app debe tomar como referencia visual principal las imágenes proporcionadas.
+El diseño debe parecer una evolución profesional y funcional de esas pantallas, manteniendo su estilo visual, densidad, jerarquía, suavidad, estructura y lenguaje de marca.
+
+1. Referencia visual obligatoria
+
+Usa las imágenes proporcionadas como referencia directa de diseño.
+
+La interfaz debe respetar:
+
+Fondos claros lavanda/blanco
+Cards suaves con bordes redondeados
+Glassmorphism sutil
+Gradientes azul/púrpura
+Sombras suaves
+Espaciado limpio
+UI emocional y amable
+Estética premium, moderna y minimalista
+Sensación de producto de salud/cuidado SaaS
+Componentes compactos en móvil
+Dashboard más aireado en web/tablet
+
+El diseño debe parecerse al estilo de las imágenes:
+
+Pantallas de login limpias y centradas
+Cards flotantes
+Inputs suaves
+Botones con gradiente
+Métricas en cards compactas
+Dashboard móvil funcional
+Dashboard web tipo SaaS
+Estados vacíos ilustrados
+Notificaciones cuidadas
+Widgets visuales premium
+Navegación inferior en móvil
+Sidebar en web/tablet
+2. Mascota obligatoria: solo Slime
+
+IMPORTANTE:
+
+La única mascota permitida es el slime azul/morado que aparece en las imágenes proporcionadas, especialmente en la primera imagen.
+
+No crear, rediseñar ni inventar una nueva mascota.
+
+No usar:
+
+Perezoso
+Personajes tipo animal
+Personajes con forma de reloj
+Personajes verdes
+Mascotas alternativas
+Ilustraciones genéricas
+Stickers desconectados de la interfaz
+
+La IA debe usar las imágenes proporcionadas del slime como assets visuales reales.
+
+El slime debe estar integrado en la interfaz de forma natural, como parte del diseño, no colocado encima como una pegatina.
+
+Debe aparecer en:
+
+Login
+Onboarding
+Empty states
+Estado de jornada
+Descansos
+Mood tracker
+Finalización de turno
+Feedback de acciones
+Pantallas de error o sin conexión
+
+El componente SlimeMascot debe consumir assets desde:
+
+constants/assets.ts
+
+Debe soportar estados visuales usando las imágenes proporcionadas:
+
+idle
+working
+break
+sad
+happy
+success
+empty
+offline
+
+No describir físicamente al slime para que la IA lo genere.
+Las imágenes del slime serán proporcionadas como referencia/assets y deben utilizarse directamente.
+
+3. Stack obligatorio
 
 Tecnologías obligatorias:
 
@@ -34,11 +123,28 @@ expo-blur
 expo-location
 react-native-reanimated
 react-native-gesture-handler
+expo-haptics
+AsyncStorage o SecureStore para persistencia local
+Zustand para estado global
+React Hook Form + Zod para formularios y validación
+4. Arquitectura modular obligatoria
 
-Estructura modular obligatoria:
+Crear una estructura limpia, escalable y production-ready:
 
 /app
+  /(auth)
+  /(onboarding)
+  /(tabs)
+  /(dashboard)
+  /(admin)
+  /modals
 /components
+  /ui
+  /layout
+  /forms
+  /cards
+  /mascot
+  /navigation
 /hooks
 /lib
 /constants
@@ -46,199 +152,262 @@ Estructura modular obligatoria:
 /store
 /types
 /assets
+/i18n
+/providers
+/sql
 
-Separar:
+Separar claramente:
 
-lógica
+lógica de negocio
 UI
 hooks
 servicios
+providers
 estados globales
 assets
 design tokens
+tipos TypeScript
+queries Supabase
+realtime subscriptions
 
-Mantener código:
+El código debe ser:
 
 limpio
 reutilizable
+modular
 escalable
+mantenible
 production-ready
-2. RESPONSIVE DESIGN SYSTEM
+sin mocks estáticos innecesarios
+sin botones muertos
+5. Sistema responsive
 
 Breakpoint principal:
 
 md = 768px
-MOBILE
+Mobile
 
-Usar:
+En móvil, la app debe parecerse a las pantallas proporcionadas:
 
 Bottom Tabs Navigation
 Stack Navigation para detalles
-UX compacta y eficiente
-Navegación rápida con una mano
-TABLET / WEB
+Cards compactas
+Paddings reducidos
+Acciones rápidas
+Navegación con una mano
+Scroll vertical minimizado
+Jerarquía visual clara
+Layout eficiente
+UX táctil y rápida
+
+La app móvil debe sentirse:
+
+operativa
+rápida
+compacta
+premium
+amable
+productiva
+
+No usar exceso de espacio en móvil.
+
+Tablet / Web
+
+En tablet y web, transformar la experiencia en un dashboard SaaS premium:
+
+Sidebar izquierda fija
+Topbar sticky translúcida
+Layout responsive de 3 columnas
+Widgets desacoplados
+Cards más aireadas
+Métricas visuales
+Paneles de actividad
+Monitor realtime
+Planner visual
+Dashboard estilo SaaS
+
+El diseño web debe inspirarse en:
+
+Linear
+Stripe Dashboard
+Vercel
+Raycast
+Notion
+Apple Health
+visionOS
+6. Sistema de densidad responsive
+
+Crear un sistema de densidad visual adaptable.
+
+Mobile density
 
 Usar:
 
-Sidebar izquierda fija
-Dashboard estilo SaaS premium
-Layout responsive de 3 columnas
-Widgets desacoplados
-Topbar sticky translúcida
-3. RESPONSIVE DENSITY SYSTEM
+spacing compacto
+cards más bajas
+botones táctiles pero no gigantes
+inputs compactos
+headers reducidos
+componentes apilados eficientemente
+navegación rápida
+acciones primarias visibles
+mínima fricción
+Web density
 
-IMPORTANTE:
+Usar:
 
-NO usar exceso de espacio en móvil.
-
-La app debe sentirse:
-
-rápida
-operativa
-táctil
-eficiente
-Mobile
-spacing compacto y elegante
-minimizar scroll vertical
-acciones rápidas
-padding reducido
-densidad eficiente
-priorizar productividad
-Web/Desktop
-experiencia más aireada
-dashboard premium visual
-mayor separación entre widgets
-layouts más amplios
+más espacio entre widgets
+layouts amplios
+tablas visuales modernas
+dashboards con profundidad
+cards más grandes
+sidebar fija
+topbar translúcida
+mejor aprovechamiento horizontal
 
 Mantener consistencia visual entre plataformas sin desperdiciar espacio en móvil.
 
-4. DESIGN SYSTEM PREMIUM
+7. Design System Premium
 
-Crear sistema completo de design tokens:
+Crear design tokens completos:
 
-colors.ts
-spacing.ts
-typography.ts
-radius.ts
-shadows.ts
-animations.ts
+/constants/design/colors.ts
+/constants/design/spacing.ts
+/constants/design/typography.ts
+/constants/design/radius.ts
+/constants/design/shadows.ts
+/constants/design/animations.ts
+/constants/design/breakpoints.ts
 Branding
 
-Nombre:
-Vackly
+Nombre del producto:
 
+Vackly
 Tipografía
+
+Usar:
+
 Inter para UI
 Space Grotesk para títulos
 Sans-serif moderna
 Jerarquía tipográfica consistente
-Paleta (PROHIBIDO VERDE)
+Paleta
 
-Primary Gradient:
+PROHIBIDO usar verde como color principal.
 
-Azul Eléctrico #3B82F6
-Púrpura #8B5CF6
+Paleta principal:
 
-Background:
+Electric Blue: #3B82F6
+Purple: #8B5CF6
+Soft Lavender Background: #F5F3FF
+White: #FFFFFF
+Ink: #111827
+Muted Text: #6B7280
+Soft Border: rgba(255,255,255,0.65)
 
-Lavanda pálido #F5F3FF
+Gradiente principal:
+
+linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%)
 UI Style
-Glassmorphism premium
-Transparencia 60%
-Blur suave
-Bordes blancos sutiles
-Sombras suaves estilo Apple/visionOS
-Border Radius
+
+Usar:
+
+glassmorphism premium
+blur suave
+transparencia controlada
+bordes blancos sutiles
+sombras suaves estilo Apple/visionOS
+profundidad elegante
+superficies limpias
+cards flotantes
+Border radius
 Cards: 24px
 Inputs: 16px
+Buttons: 18px
 Pills: 999px
-5. MOTION DESIGN SYSTEM
+Modals: 28px
+Bottom sheets: 32px
+8. Motion Design System
 
-La aplicación debe sentirse viva y moderna.
+La aplicación debe sentirse viva, fluida y moderna.
 
 Implementar:
 
-Transiciones fluidas
-Shared element transitions
-Microinteracciones
-Hover animations en web
-Skeleton loaders shimmer
-Animaciones spring suaves
-Feedback visual instantáneo
+transiciones suaves
+microinteracciones
+animaciones de entrada staggered
+shared element transitions cuando aplique
+hover animations en web
+skeleton loaders shimmer
+feedback visual instantáneo
 Reanimated transitions
-Animaciones de entrada staggered
-Haptic feedback en móvil
+spring animations suaves
+haptic feedback en móvil
+animación idle breathing para el slime
 
 Duraciones:
 
-200ms a 300ms
-6. REFERENCIAS VISUALES
+Microinteracciones: 160ms - 220ms
+Transiciones normales: 200ms - 300ms
+Entrada de pantallas: 280ms - 360ms
+Spring: suave, sin rebote excesivo
+9. Gestión inteligente de assets
 
-Inspiración visual:
-
-Stripe Dashboard
-Linear
-Raycast
-Vercel
-Notion
-Arc Browser
-Apple Health
-visionOS
-iOS 18
-
-Objetivo visual:
-
-minimalismo premium
-interfaces limpias
-profundidad elegante
-aspecto moderno startup SaaS
-
-PROHIBIDO:
-
-UI genérica tipo admin template
-tablas aburridas
-botones default
-cards planas
-interfaces saturadas
-colores chillones
-7. GESTIÓN INTELIGENTE DE ASSETS
-
-NO preguntar por rutas de imágenes.
+No preguntar por rutas de imágenes.
 
 Crear automáticamente:
-constants/assets.ts
+
+/constants/assets.ts
 
 Asumir estructura:
-assets/images/
 
-Mascota Slime
+/assets/images/
+  /mascot/
+  /branding/
+  /backgrounds/
+  /patterns/
+  /placeholders/
 
 Crear referencias para:
 
-idle
-working
-break
-sad
-happy
-Branding
-logo light
-logo dark
-fondos glassmorphism
-gradients
-patterns
-Placeholders
-cuidadores
-familias
-pacientes
+mascot: {
+  idle,
+  working,
+  break,
+  sad,
+  happy,
+  success,
+  empty,
+  offline
+}
+branding: {
+  logoLight,
+  logoDark
+}
+backgrounds: {
+  glassGradient,
+  authGradient,
+  dashboardPattern
+}
+placeholders: {
+  caregiver,
+  family,
+  patient,
+  document
+}
 
 El componente SlimeMascot debe:
 
 consumir assets.ts
 cambiar dinámicamente según estado
-incluir animación idle breathing
-8. COMPONENT LIBRARY
+tener animación breathing suave
+integrarse visualmente en cards, headers y empty states
+respetar proporciones
+no parecer una pegatina
+no usar ninguna mascota alternativa
+10. Component Library Premium
 
-Crear componentes reutilizables premium:
+Crear componentes reutilizables:
 
 GlassCard
 GradientButton
@@ -256,125 +425,192 @@ AnimatedTabs
 RealtimeIndicator
 MoodSelector
 CalendarRangePicker
+LanguageSelector
+RoleSelector
+EmptyState
+DocumentUploader
+SwipeToStartShift
 
-Todos deben:
+Todos los componentes deben:
 
 soportar responsive
 soportar dark/light
 usar design tokens
 tener animaciones suaves
-9. AUTENTICACIÓN REAL CON SUPABASE
+estar tipados con TypeScript estricto
+ser reutilizables
+evitar estilos hardcoded innecesarios
+11. Autenticación real con Supabase
 
-Implementar autenticación REAL usando Supabase.
+Implementar autenticación real usando Supabase.
 
-Funciones
+Funciones obligatorias:
+
 Login
 Registro
-Recuperación contraseña
-Persistencia sesión
+Recuperación de contraseña
+Persistencia de sesión
 Logout
-Registro
+Protección de rutas
+Redirección según rol
+Metadata de usuario
 
-Permitir selección de rol:
+Durante registro, permitir selección de rol:
 
 Cuidador
 Familia
 Admin
 
-Guardar metadata de usuario.
+Guardar metadata:
 
-10. BASE DE DATOS REAL
+role
+full_name
+preferred_language
+avatar_url
+created_at
+12. Base de datos real Supabase PostgreSQL
 
-Usar Supabase PostgreSQL.
-
-Crear SQL completo:
+Crear SQL completo para:
 
 tablas
 relaciones
 índices
 constraints
-Persistencia REAL
+triggers
+timestamps
+enums
+foreign keys
 
-Guardar:
+Persistencia real para:
 
+perfiles
 jornadas
 fichajes
+descansos
 vacaciones
 bajas médicas
 alteraciones horarias
 mood tracker
 pacientes
-historial
-perfiles
+medicación
+rutinas
+alergias
+trastornos
+historial clínico básico
 reviews
 documentos
-11. SEGURIDAD RLS
+contratos
+CV
+solicitudes
+notificaciones
+actividad realtime
+13. Seguridad RLS
 
-Generar políticas completas Row Level Security.
+Generar políticas completas de Row Level Security.
 
 Objetivo:
 
 datos privados por usuario
 acceso por roles
-protección completa
+separación cuidador/familia/admin
+protección production-ready
 
 Incluir:
 
 policies SQL
 permisos por rol
-seguridad production-ready
-12. STORAGE
+acceso restringido a documentos
+acceso restringido a pacientes
+acceso restringido a jornadas
+acceso admin controlado
+validación de ownership
+protección contra acceso cruzado
+14. Supabase Storage
 
-Implementar buckets Supabase para:
+Implementar buckets para:
 
-fotos
-CV
-contratos
-justificantes
-documentos médicos
+avatars
+cv
+contracts
+medical-documents
+justifications
+patient-documents
 
-Funciones:
+Funciones obligatorias:
 
 upload
 preview
 delete
 download
-13. REALTIME
+signed URLs
+validación de tipo de archivo
+validación de tamaño
+permisos por rol
+15. Realtime
 
-Implementar realtime REAL usando:
-supabase.channel
+Implementar realtime real usando:
 
-Actualizaciones en vivo
-estados trabajadores
+supabase.channel()
+
+Sincronizar en vivo:
+
+estado del trabajador
 fichajes
 solicitudes
+cambios de jornada
 panel admin
 monitor operativo
+notificaciones
+cambios en pacientes
+documentos subidos
 
-Todo sincronizado instantáneamente.
+Todo debe actualizarse instantáneamente donde corresponda.
 
-14. GEOLOCALIZACIÓN Y FICHAJE
+16. Geolocalización y fichaje
 
 Usar:
+
 expo-location
 
 Implementar:
 
+permisos de ubicación
+validación de ubicación
 geofencing
-permisos
-validación ubicación
-simulación NFC
+distancia al centro de trabajo
 fichaje inteligente
-UX fichaje
+simulación NFC
+historial de ubicaciones de fichaje
+estados de error claros
+
+UX obligatoria:
+
 “Desliza para iniciar jornada”
+“Desliza para pausar”
+“Desliza para finalizar”
+
+El fichaje debe incluir:
+
+animación premium
 feedback visual inmediato
-animaciones premium
-15. INTERNACIONALIZACIÓN
+haptic feedback
+actualización realtime
+estado del slime según la acción
+
+Estados del slime:
+
+idle → sin jornada activa
+working → jornada iniciada
+break → descanso activo
+happy → jornada finalizada correctamente
+sad → error, sin conexión o sin actividad
+17. Internacionalización
 
 Usar:
+
 i18next
 
-Idiomas:
+Idiomas obligatorios:
 
 Español
 Inglés
@@ -384,62 +620,152 @@ Gallego
 
 Persistir idioma seleccionado.
 
-16. PANTALLAS Y MÓDULOS
+Crear archivos:
+
+/i18n/es.json
+/i18n/en.json
+/i18n/ca.json
+/i18n/eu.json
+/i18n/gl.json
+
+Todas las pantallas y componentes deben usar traducciones reales.
+
+18. Pantallas y módulos obligatorios
 Welcome
-onboarding premium
-selector idioma
-selector rol
-branding animado
+
+Debe incluir:
+
+branding Vackly
+slime integrado visualmente
+selector de idioma
+login
+registro
+recuperación de contraseña
+diseño similar a las imágenes de login proporcionadas
+card central glassmorphism
+botón gradiente premium
+Onboarding
+
+Debe incluir:
+
+slides cortos
+slime como acompañante visual
+selector de rol
+explicación simple del producto
+navegación fluida
+diseño limpio y emocional
+
+Roles:
+
+Cuidador
+Familia
+Admin
 Dashboard Cuidador
+
+Debe incluir:
+
 timer funcional
 estado en vivo
-resumen jornada
+resumen de jornada
 acciones rápidas
+próxima tarea
+paciente asignado
+botón de fichaje
+slime reactivo
+cards compactas
+navegación inferior
 Gestión de Tiempos
+
+Debe incluir:
+
 historial real
+calendario funcional
 vacaciones
 bajas médicas
-alteraciones
-calendario funcional
+alteraciones horarias
+solicitudes
+estado de aprobación
+filtros
+cards responsive
 Pacientes
+
+Debe incluir:
+
+listado de pacientes
+ficha editable
 medicación
 rutinas
 alergias
 trastornos
-información crítica editable
+notas críticas
+documentos
+historial básico
+UI clara y segura
 Perfil Profesional
+
+Debe incluir:
+
 CV
 contrato
 reseñas
 estadísticas
 documentos
+disponibilidad
+datos personales
+métricas de desempeño
 Mood Tracker
+
+Debe incluir:
+
 estado post-jornada
+selector emocional
 slime reactivo
 analytics emocionales
-Admin Dashboard (WEB)
+historial
+insights visuales
+cards premium
+Admin Dashboard Web
+
+Debe incluir:
+
 monitor en vivo
 métricas realtime
 planner drag & drop
-aprobador RRHH
+aprobador de RRHH
 analytics
 heatmaps
 actividad instantánea
-17. EMPTY STATES
+tabla moderna no genérica
+sidebar fija
+topbar translúcida
+widgets desacoplados
+19. Empty States
 
-Cada módulo debe tener:
+Cada módulo debe tener estados vacíos ilustrados.
 
-estados vacíos ilustrados
-mensajes humanos
-feedback visual premium
+Los empty states deben incluir:
 
-La mascota Slime debe reaccionar:
+slime integrado
+mensaje humano
+explicación breve
+acción primaria real
+diseño premium
+
+Ejemplos:
+
+“No hay jornadas registradas todavía”
+“Tu slime está esperando la primera actividad”
+“Aún no tienes pacientes asignados”
+“No hay documentos subidos”
+
+El slime debe reaccionar:
 
 happy → tareas completadas
-sad → sin actividad
+sad → sin actividad o error
 working → jornada activa
 break → descanso
-18. UX PREMIUM
+idle → estado inicial
+20. UX premium obligatoria
 
 Prioridades:
 
@@ -448,42 +774,104 @@ claridad
 accesibilidad
 ergonomía móvil
 sensación premium
-
-Cada botón debe ejecutar:
-
+feedback visual constante
 navegación real
-update real
-acción real
-realtime update
+acciones funcionales
+cero botones muertos
 
-NO usar:
+Cada botón debe ejecutar una acción real:
+
+navegación
+actualización de Supabase
+subida de archivo
+cambio de estado
+realtime update
+validación
+apertura de modal
+guardado de datos
+
+No usar:
 
 placeholders falsos
-botones muertos
-mocks estáticos
-19. OUTPUT ESPERADO
+botones sin acción
+mocks estáticos permanentes
+datos decorativos sin conexión
+UI genérica tipo admin template
+tablas aburridas
+botones default
+cards planas
+interfaces saturadas
+colores chillones
+verde como color dominante
+perezoso
+personaje tipo tiempo
+mascotas inventadas
+21. Accesibilidad
 
-Generar:
+Implementar:
 
-código funcional
-modular
-limpio
-responsive
-production-ready
+labels accesibles
+contraste adecuado
+soporte dark/light
+tamaños táctiles correctos
+estados focus visibles en web
+navegación por teclado en web
+mensajes de error claros
+soporte screen reader cuando corresponda
+22. Output esperado
+
+Generar una aplicación funcional, modular y escalable.
 
 Incluir:
 
-estructura completa
-navegación
-SQL
+estructura completa del proyecto
+navegación con expo-router
+design system
+componentes premium
+pantallas completas
 hooks
-servicios
+services
 providers
+store global
+Supabase auth
+Supabase database SQL
+RLS policies
+Supabase storage
 realtime
-auth
-storage
-UI premium
+geolocalización
+i18n
+responsive layouts
+dashboard web
+app móvil
+estados vacíos
+integración correcta del slime desde assets
 
-El resultado debe parecer una aplicación SaaS real lista para escalar.
+El resultado debe parecer una aplicación SaaS real lista para escalar, con una estética muy cercana a las imágenes proporcionadas y usando únicamente la mascota slime de referencia.
+
+23. Criterio visual final
+
+Antes de finalizar, comprobar que:
+
+La app se parece claramente al estilo visual de las imágenes proporcionadas.
+El login mantiene composición limpia, card glassmorphism y slime integrado.
+El móvil no tiene exceso de espacios vacíos.
+El dashboard web se siente premium y SaaS.
+Los colores principales son azul, púrpura, lavanda y blanco.
+No aparece ningún perezoso.
+No aparece ningún personaje de tiempo.
+No aparece ninguna mascota inventada.
+El slime usado es únicamente el asset proporcionado por el usuario.
+La mascota no parece una pegatina.
+Todos los botones tienen acción real.
+La app usa datos reales con Supabase.
+Hay RLS, Storage y Realtime reales.
+La app es responsive para iOS, Android y Web.
+Instrucción final para la IA
+
+No generes imágenes nuevas.
+No inventes una mascota.
+No rediseñes el slime.
+Usa únicamente los assets del slime proporcionados por el usuario y colócalos de forma integrada dentro de la interfaz.
+
 
 
